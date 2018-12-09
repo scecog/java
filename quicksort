@@ -1,0 +1,28 @@
+package shujujiegou;
+
+public class QuickSort {
+	public static void sort(int[] arr, int start , int end) {
+		if(start < end) {
+			int stander = arr[start];
+			int high = end;
+			int low = start;
+			while(low < high) {
+			while(low < high && stander <= arr[high]) {
+				high --;
+			}
+			arr[low] = arr[high];
+			while(low < high && stander >= arr[low]) {
+				low ++;
+			}
+			arr[high] = arr[low];
+			
+		}
+			arr[low] = stander;
+			sort(arr,start,low);
+			sort(arr,low+1,end);
+		}
+	}
+	public static void quicksort(int[] arr) {
+		sort(arr,0,arr.length - 1);
+	}
+}
